@@ -1,28 +1,21 @@
-import React from 'react';
-import {  Card, Button } from 'react-bootstrap';
-import { formatCurrency } from '../../../Utilities/FormatCurrency';
-import { useShoppingCart } from '../../../Context/ShoppingCartContext';
+import { Button, Card } from 'react-bootstrap';
+import { useShoppingCart } from '../../Context/ShoppingCartContext';
+import { formatCurrency } from '../../Utilities/FormatCurrency';
 
-type PopularCartProps = {
-    id: number
-    name: string
-    price: number
-    img: string
-}
 
-const PopularCart = ({id, name, price, img}: PopularCartProps) => {
+const ProductCard = ({id, title, price, image}) => {
     const { increaseCartQuantity } = useShoppingCart()
     return (
-        <Card className='mx-2'>
+        <Card className='h-100'>
             <Card.Img 
                 variant='top'
-                src={img}
-                height='250px'
+                src={image}
+                className='w-100 h-100'
                 style={{objectFit: 'cover'}}
             />
             <Card.Body className='d-flex flex-column'>
                 <Card.Title className='d-flex justify-content-between align-items-baseline'>
-                    <span className='fs-2'>{name}</span>
+                    <span className='fs-2'>{title}</span>
                     <span className='ms-2 text-muted'>{formatCurrency(price)}</span>
                 </Card.Title>
                 <div className="mt-auto">
@@ -54,4 +47,4 @@ const PopularCart = ({id, name, price, img}: PopularCartProps) => {
     )
 }
 
-export default PopularCart
+export default ProductCard

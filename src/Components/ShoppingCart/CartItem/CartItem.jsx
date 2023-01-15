@@ -4,25 +4,21 @@ import { ProductsList } from '../../../Data/Data'
 import { formatCurrency } from '../../../Utilities/FormatCurrency'
 
 
-type CartItem = {
-    id: number
-    quantity: number
-}
 
-const CartItem = ({id, quantity}: CartItem) => {
+const CartItem = ({id, quantity}) => {
     const { removeFromCart, increaseCartQuantity, decreaseCartQuantity } = useShoppingCart();
     const item = ProductsList.find(i => i.id === id)
     if (item == null) return null
     return (
         <div className="d-flex align-items-center mb-4">
             <img 
-                src={item.img} 
-                alt={item.name} 
+                src={item.image} 
+                alt={item.title} 
                 style={{ width: "125px", height: "85px", objectFit: "cover", marginRight: '1rem' }}
             />
             <div className="me-auto">
                 <div>
-                    {item.name} {" "}
+                    {item.title} {" "}
                     {quantity > 1 && (
                         <span className="text-muted" style={{ fontSize: ".65rem" }}>
                             x{quantity}

@@ -1,4 +1,4 @@
-import {  Container, Offcanvas, Stack } from 'react-bootstrap'
+import {  Container} from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { useShoppingCart } from '../../Context/ShoppingCartContext'
 import { ProductsList } from '../../Data/Data'

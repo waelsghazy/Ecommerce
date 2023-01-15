@@ -1,9 +1,9 @@
 import React from 'react'
-import { Col, Container, Row } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import { Col, Container, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import image from '../../assets/slider1-removebg-preview.png'
 
 const Header = () => {
-    const img = 'https://i.pinimg.com/originals/6b/38/d5/6b38d522fb7aa4be68c6ee37b4b819f0.jpg'
     return (
         <Container className='my-4 py-4'>
             <Row className='gy-4'>
@@ -12,7 +12,7 @@ const Header = () => {
                     md={12}
                     sm={1}
                 >
-                    <img src={img} alt="" className='w-100' />
+                    <img src={image} alt="" className='w-100' />
                 </Col>
                 <Col
                     lg={6}
@@ -20,7 +20,7 @@ const Header = () => {
                     sm={1}
                 >
                     <h1 
-                        className='mb-5'
+                        className='my-5'
                     >
                         SUMMER SALE
                     </h1>

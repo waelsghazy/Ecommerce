@@ -1,5 +1,5 @@
 import React from 'react';
-import PopularCart from './PopularCart/PopularCart';
+import ProductCard from '../ProductsCard/ProductCard';
 import { Container } from 'react-bootstrap';
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
@@ -36,7 +36,7 @@ const Popular = () => {
                 
             >
                 {PopularList.map((popular) => (
-                    <PopularCart {...popular} key={popular.id} />
+                    <ProductCard {...popular} key={popular.id} />
                 ))}
             </Carousel>
         </Container>
